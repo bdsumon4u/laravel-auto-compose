@@ -1,0 +1,37 @@
+{
+    "name": "hotash/laravel-auto-compose",
+    "description": "A PHP Package To Automatically Compose Route Parameters To Appropriate View In Laravel.",
+    "keywords": [
+        "hotash",
+        "laravel-auto-compose"
+    ],
+    "homepage": "https://github.com/bdsumon4u/laravel-auto-compose",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sumon Ahmed",
+            "email": "bdsumon4u@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "illuminate/support": "^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hotash\\AutoCompose\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hotash\\AutoCompose\\AutoComposeServiceProvider"
+            ]
+        }
+    }
+}
