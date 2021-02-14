@@ -4,6 +4,7 @@ namespace Hotash\AutoCompose;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class AutoComposeServiceProvider extends ServiceProvider
 {
@@ -14,8 +15,9 @@ class AutoComposeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
-            $view->with(Route::current()->parameters());
+        view()->composer('*', function (View $view) {
+            $parameters = optional(Route::current())->parameters();
+            $view->with(array_merge($view->getData(), $parameters ?? []));
         });
     }
 }
